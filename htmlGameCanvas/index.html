@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><title>HTML Game Canvas</title><script src="static/fallingBlocks.js"></script><script defer="defer" src="htmlGameCanvas.4330e6e2c32073f4cfa7.js"></script></head><body><div class="container"><center><canvas id="html_game_canvas">Placeholder for canvas</canvas></center></div><script>/* 
+			 * Placeholder for the sample game and game API objects initialized on load
+			 */
+			let gameApi = undefined;
+			let game = undefined;
+
+			/*
+			 * On load, configure our gameCanvas and start
+			 */
+			window.onload = (event) => {
+				if (window.gameCanvas) {
+					// the api is all that is needed to config/run
+					gameApi = window.gameCanvas.api;
+					// init the game with the gameApi
+					game = window.fallingBlocks;
+					game.init(gameApi);
+					// start the canvas engine
+					gameApi.startGame();
+					console.log("Started html game canvas engine");
+				} else {
+					console.log("Failed to load html game canvas engine");
+				}
+			}</script></body></html>
